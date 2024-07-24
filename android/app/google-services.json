@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587248508057",
+    "project_id": "cutomerprod",
+    "storage_bucket": "cutomerprod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587248508057:android:a9f6b7dfad98e693b92c08",
+        "android_client_info": {
+          "package_name": "com.gic.customer_product_management_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWePplCecwxpyGpBJhlvSH-wvt3-1Gd9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
