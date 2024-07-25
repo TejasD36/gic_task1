@@ -56,3 +56,6 @@ android/.gradle
 android/app/debug
 android/app/profile
 android/app/release
+
+android/gradle/
+android/.gradle/
