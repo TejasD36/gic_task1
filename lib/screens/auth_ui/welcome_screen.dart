@@ -1,3 +1,5 @@
+import 'package:customer_product_management_system/controllers/google_sign_in_controller.dart';
+import 'package:customer_product_management_system/screens/auth_ui/sign_in_screen.dart';
 import 'package:customer_product_management_system/utils/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,11 +8,17 @@ import 'package:lottie/lottie.dart';
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
+
+
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+
+  final GoogleSignInController _googleSignInController =
+  Get.put(GoogleSignInController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +31,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           style: TextStyle(color: AppConstant.appTextColor),
         ),
       ),
-      body: Container(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -55,7 +64,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       width: Get.width/12,
                       height: Get.height/12,
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      _googleSignInController.signInWithGoogle();
+                    },
                     label: const Text("Sign in with Google",style: TextStyle(color: AppConstant.appTextColor),),
                 ),
               ),
@@ -71,7 +82,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 child: TextButton.icon(
                   icon:const Icon(Icons.email_outlined,color: AppConstant.appTextColor,),
-                  onPressed: (){},
+                  onPressed: (){
+                    Get.to(()=>const SignInScreen());
+                  },
                   label: const Text("Sign in with Email",style: TextStyle(color: AppConstant.appTextColor)),
                 ),
               ),
